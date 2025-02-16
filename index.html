@@ -4,232 +4,7 @@
     <meta charset="UTF-8" />
     <title>Dog rescue center</title>
     <link rel="icon" type="image/jp" href="3.jpg">
-    <style>
-        .header {
-    display: flex;
-    justify-content: space-between;  /* 分别对齐 */
-    align-items: center;  /* 垂直居中 */
-        }
-       body {
-  background-image:url('2.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100% 100%;
-}   
-        h1{
-            color:rgb(57, 167,241) ;
-        } 
-        .page {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;  /* 让页面最小高度为100vh，确保footer在底部 */
-            border-style: double;
-            border-color:rgb(57, 167,241) ;/* 边框设计 */
-        
-        }
-        .footer {
-          margin-top: auto; /* 自动推到页面底部 */
-        }
-        .content {
-            display: flex;
-            flex: 1;
-        } 
-        .header1{
-        /*     background-color: #f8f9fa; */
-            text-align: center;
-            padding: 20px;
-            border-style: double;
-            border-color:rgb(57, 167,241) ;/* 边框设计 */
-        }
-        .aside {
-            flex: 1;
-            padding: 20px;
-            border-style: double;
-            border-color:rgb(57, 167,241) ;/* 边框设计 */
-        }
-        .main {
-            flex: 8;
-            padding: 20px;
-           /*  background-color: #e9ecef; */
-            border-style: double;
-            border-color:rgb(57, 167,241) ;/* 边框设计 */
-        }   
-        ul {
-            list-style-type: none;
-            padding: 0;
-            background-color:num;
-        }
-
-        ul li {
-            margin: 50px 0;
-        }
-
-        ul li a {
-            text-decoration: none;
-            color: black;
-            padding: 10px 15px;
-            background-color: rgb(57, 167, 241); /* Change this to your desired color */
-            border-radius: 5px;
-            display: block;
-            transition: background-color 0.3s; /* 按钮属性设计 */
-        }
-
-        ul li a:hover {
-            background-color: #45a049; /* Change this to your desired hover color */
-        }
-        .result {
-            display: none;
-            color: rgb(57, 167, 241);
-            font-size: 120%;
-            text-align: right;
-        }
-        #customers {   /*Table */
-            font-family: Name, Address, Telephone;
-            border-collapse: collapse;
-            width: 100%;
-            }
-
-        #customers td, #customers th {
-        border: 1px solid #ddd;
-        padding: 8px;
-        }
-
-        #customers tr:nth-child(even){background-color: #f2f2f2;}
-
-        #customers tr:hover {background-color: #ddd;}
-
-        #customers th {
-        padding-top: 12px;
-        padding-bottom: 12px;
-        text-align: left;
-        background-color: #04AA6D;
-        color: white;
-        }
-        #content2 {
-            width: 80%; /* 容器宽度 */
-            margin: 0 auto; /* 居中 */
-        }
-
-        .image-row {
-            display: flex;
-            justify-content: space-between; /* 平分空白，图片均匀分布 */
-            margin-bottom: 20px; /* 行间距 */
-        }
-
-        .container {
-            position: relative;
-            width: 48%; /* 每张图片占父容器宽度的48%（留出空隙） */
-        }
-
-        .image {
-            display: block;
-            width: 100%; /* 设置图片宽度为容器的宽度 */
-            height: 500px; /* 固定高度 */
-            object-fit: cover; /* 保持图片比例并填满容器 */
-        }
-
-        .overlay {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 100%;
-            width: 100%;
-            opacity: 0;
-            transition: 0.5s ease;
-            background-color: rgba(0, 140, 186, 0.8); /* 半透明背景 */
-        }
-
-        .container:hover .overlay {
-            opacity: 1;
-        }
-
-        .text {
-            color: white;
-            font-size: 20px;
-            font-weight: bold;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            -ms-transform: translate(-50%, -50%);
-            text-align: center; /* 居中对齐 */
-            word-wrap: break-word; /* 长单词换行 */
-            white-space: normal; /* 允许换行 */
-            max-width: 90%; /* 限制文字宽度，避免超出图片 */
-        }
-
-        * { /* Form */
-            box-sizing: border-box;
-            }
-
-            input[type=text], select, textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            resize: vertical;
-            }
-
-            label {
-            padding: 12px 12px 12px 0;
-            display: inline-block;
-            }
-
-            input[type=submit] {
-            background-color: #04AA6D;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            float: right;
-            }
-
-            input[type=submit]:hover {
-            background-color: #45a049;
-            }
-
-            .container2 {
-            border-radius: 5px;
-            background-color: #f2f2f2;
-            padding: 20px;
-            }
-
-            .col-25 {
-            float: left;
-            width: 25%;
-            margin-top: 6px;
-            }
-
-            .col-75 {
-            float: left;
-            width: 75%;
-            margin-top: 6px;
-            }
-
-            /* Clear floats after the columns */
-            .row::after {
-            content: "";
-            display: table;
-            clear: both;
-            }
-            
-            /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-            @media screen and (max-width: 600px) {
-            .col-25, .col-75, input[type=submit] {
-                width: 100%;
-                margin-top: 0;
-            }
-            }
-
-            video {
-            width: 100%;
-            height: auto;
-            }
-
-    </style>
+    <link rel="stylesheet" href="styles.css">
     <script>
         document.addEventListener("DOMContentLoaded", function() {
           // 此代码将在页面加载完成后执行
@@ -451,15 +226,14 @@
                         <p>Please enter your personal information and the dog's situation, and we will promptly feedback the data to the adoption station.</p>
 
                         <div class="container2">
-                            <form id="myForm">
-                                <label>Name:</label>
-                                <input type="text" name="name" required>
-                                <br><br>
-                                <label>Email:</label>
-                                <input type="email" name="email" required>
-                                <br><br>
+                            <form id="dataForm">
+                                <input type="text" id="name" placeholder="Name" required />
+                                <input type="email" id="email" placeholder="Email" required />
                                 <button type="submit">Submit</button>
-                            </form>
+                              </form>
+                              
+                              <p id="responseMessage"></p>
+                              
                         </div>
                         
                         <p style="color: rgb(57, 167, 241); font-size: 120%;text-align:right">Lost Information</p>
@@ -584,39 +358,35 @@
             }
         }
 
-        window.onload = function() {
-        showContent('content0'); // 显示默认的欢迎页面内容
-        renderTable(); // 初始化表格第一页数据
-        };
+        // 假设你在提交表单时调用此函数
+        document.getElementById("dataForm").addEventListener("submit", async function (event) {
+    event.preventDefault();  // 阻止表单的默认提交行为（刷新页面）
 
-        document.getElementById("myForm").addEventListener("submit", function(event) {
-    event.preventDefault();
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
 
-    // 获取表单数据
-    const formData = new FormData(this);
-    const data = {};
-    formData.forEach((value, key) => {
-        data[key] = value;
-    });
+    const requestBody = { name: name, email: email };
+    
+    try {
+        const response = await fetch("http://localhost:3000/submit", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(requestBody),
+        });
 
-    // 发送 POST 请求到 Google Apps Script
-    fetch("https://script.google.com/macros/s/AKfycby5obgpCuF8YEwOzW-RcL5aXxj5igeFkhaQ5rAIoy0NVrUb-KV8RTn5lgyxRdV5wYg/exec", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-    })
-    .then(response => response.text())
-    .then(data => {
-        alert("提交成功！");
-        console.log(data);
-    })
-    .catch(error => {
-        alert("提交失败，请稍后重试！");
-        console.error("Error:", error);
-    });
+        const result = await response.json();
+        document.getElementById("responseMessage").innerText = result.message || 'Data submitted successfully.';
+    } catch (error) {
+        document.getElementById("responseMessage").innerText = `Error: ${error.message}`;
+    }
 });
+
+
+
+
+
 </script>
 
 
